@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devendra Kumar Yadav | Civil Engineer & CEO – JMC Construction and Engineering Pvt. Ltd.</title>
+<meta name="description" content="Portfolio of Devendra Kumar Yadav, Diploma Civil Engineer and CEO of JMC Construction and Engineering Pvt. Ltd., Siraha, Nepal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --bg:#0b1220; --bg2:#0f1a2e; --card:#131f36; --text:#e8eef9; --muted:#9fb0cc;
+  --accent:#f5a623; --accent2:#ffcc66; --blue:#2f80ed; --line:rgba(255,255,255,.08);
+  --shadow:0 20px 50px rgba(0,0,0,.35);
+}
+body.light{
+  --bg:#f5f7fb; --bg2:#ffffff; --card:#ffffff; --text:#14213d; --muted:#5a6a85;
+  --line:rgba(20,33,61,.1); --shadow:0 20px 50px rgba(20,33,61,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;transition:background .4s,color .4s;line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+section{padding:100px 8%;position:relative}
+.container{max-width:1200px;margin:auto}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+
+/* Preloader */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .6s,visibility .6s}
+#loader.hide{opacity:0;visibility:hidden}
+.crane{font-size:64px;color:var(--accent);animation:swing 1.4s ease-in-out infinite;transform-origin:top center}
+@keyframes swing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.load-bar{width:220px;height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.load-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));animation:load 1.6s forwards}
+@keyframes load{to{width:100%}}
+#loader p{letter-spacing:4px;font-size:12px;color:var(--muted);text-transform:uppercase}
+
+/* Progress */
+#progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue));width:0;z-index:1200}
+
+/* Nav */
+header{position:fixed;top:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;z-index:1100;transition:.4s}
+header.scrolled{background:rgba(11,18,32,.85);backdrop-filter:blur(14px);padding:12px 8%;box-shadow:0 5px 30px rgba(0,0,0,.25)}
+body.light header.scrolled{background:rgba(255,255,255,.9)}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:800}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav a{font-size:14px;font-weight:500;position:relative;padding:4px 0}
+nav a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:.3s}
+nav a:hover::after,nav a.active::after{width:100%}
+nav a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.theme-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;font-size:15px;transition:.3s}
+.theme-btn:hover{background:var(--accent);color:#111;transform:rotate(25deg)}
+.burger{display:none;font-size:24px;cursor:pointer;background:none;border:0;color:var(--text)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:50px;font-weight:600;font-size:14px;cursor:pointer;border:2px solid var(--accent);transition:.35s;position:relative;overflow:hidden}
+.btn-primary{background:var(--accent);color:#111}
+.btn-primary:hover{background:transparent;color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 25px rgba(245,166,35,.35)}
+.btn-outline{background:transparent;color:var(--text)}
+.btn-outline:hover{background:var(--accent);color:#111;transform:translateY(-4px)}
+
+/* Hero */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:120px;background:radial-gradient(circle at 80% 20%,rgba(47,128,237,.18),transparent 45%),radial-gradient(circle at 10% 90%,rgba(245,166,35,.14),transparent 40%),var(--bg);overflow:hidden}
+#bg-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.blueprint{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(circle at center,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(circle at center,#000 20%,transparent 75%);z-index:0}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative;z-index:2}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:8px 18px;border-radius:50px;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.4);color:var(--accent);font-size:13px;font-weight:500;margin-bottom:22px;animation:fadeUp .8s both}
+.hero-text h1{font-size:clamp(38px,5.5vw,68px);font-weight:800;animation:fadeUp .8s .15s both}
+.hero-text h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.typed{font-size:clamp(18px,2.4vw,26px);margin:18px 0;color:var(--muted);min-height:40px;animation:fadeUp .8s .3s both}
+.typed b{color:var(--text)}
+.cursor{display:inline-block;width:3px;height:1.1em;background:var(--accent);vertical-align:middle;margin-left:3px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-text p.lead{max-width:560px;color:var(--muted);animation:fadeUp .8s .45s both}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin:32px 0;animation:fadeUp .8s .6s both}
+.socials{display:flex;gap:14px;animation:fadeUp .8s .75s both}
+.socials a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:var(--card);transition:.3s}
+.socials a:hover{background:var(--accent);color:#111;transform:translateY(-6px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+.hero-img-wrap{position:relative;display:flex;justify-content:center;animation:fadeUp 1s .4s both}
+.hero-frame{position:relative;width:min(380px,80vw);aspect-ratio:3/4;border-radius:30px 120px 30px 120px;overflow:hidden;border:4px solid var(--accent);box-shadow:var(--shadow);animation:float 6s ease-in-out infinite;background:linear-gradient(135deg,var(--card),var(--bg2))}
+.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hero-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,18,32,.45),transparent 50%)}
+.ring{position:absolute;inset:-25px;border:2px dashed rgba(245,166,35,.45);border-radius:50%;animation:spin 30s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.float-card{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 18px;display:flex;gap:12px;align-items:center;box-shadow:var(--shadow);font-size:13px;z-index:3}
+.float-card i{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--accent);color:#111}
+.float-card strong{display:block;font-size:15px;line-height:1.2}
+.fc1{left:-10px;top:12%;animation:float 5s ease-in-out infinite}
+.fc2{right:-10px;bottom:14%;animation:float 6s 1s ease-in-out infinite}
+.scroll-down{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;width:26px;height:42px;border:2px solid var(--muted);border-radius:20px;display:flex;justify-content:center}
+.scroll-down::before{content:'';width:4px;height:8px;background:var(--accent);border-radius:4px;margin-top:8px;animation:wheel 1.6s infinite}
+@keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(16px)}}
+
+/* Section titles */
+.sec-title{text-align:center;margin-bottom:60px}
+.sec-title small{color:var(--accent);letter-spacing:4px;text-transform:uppercase;font-weight:600;font-size:13px}
+.sec-title h2{font-size:clamp(30px,4vw,46px);margin:10px 0 14px}
+.sec-title .bar{width:80px;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue));margin:auto;border-radius:4px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(50px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.left{transform:translateX(-60px)}
+.reveal.right{transform:translateX(60px)}
+.reveal.zoom{transform:scale(.85)}
+.reveal.show{opacity:1;transform:none}
+
+/* About */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.about-imgs{position:relative;height:520px}
+.about-imgs .a1{position:absolute;left:0;top:0;width:68%;height:80%;object-fit:cover;object-position:top;border-radius:24px;box-shadow:var(--shadow);border:3px solid var(--card)}
+.about-imgs .a2{position:absolute;right:0;bottom:0;width:58%;height:62%;object-fit:cover;object-position:top;border-radius:24px;box-shadow:var(--shadow);border:6px solid var(--bg2)}
+.about-imgs .ph{position:absolute;display:grid;place-items:center;background:linear-gradient(135deg,var(--card),var(--bg));color:var(--muted);font-size:40px;border-radius:24px;border:1px dashed var(--line)}
+.exp-badge{position:absolute;left:8%;bottom:6%;background:var(--accent);color:#111;padding:18px 24px;border-radius:20px;text-align:center;box-shadow:var(--shadow);animation:float 5s ease-in-out infinite;z-index:3}
+.exp-badge b{font-size:34px;display:block;line-height:1;font-family:'Playfair Display',serif}
+.exp-badge span{font-size:12px;font-weight:600}
+.about-text h3{font-size:30px;margin-bottom:16px}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin:24px 0 32px}
+.info-grid div{font-size:14px}
+.info-grid b{color:var(--accent);margin-right:6px}
+
+/* Stats */
+.stats{padding:70px 8%;background:linear-gradient(135deg,#0d1b36,#16305e);position:relative;overflow:hidden;color:#fff}
+.stats::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 24px,rgba(255,255,255,.03) 24px 48px)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;position:relative}
+.stat i{font-size:34px;color:var(--accent);margin-bottom:10px}
+.stat h3{font-size:46px;font-family:'Playfair Display',serif}
+.stat p{color:#b9c8e6;font-size:14px}
+
+/* Company */
+.company{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.company-card{background:linear-gradient(135deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:28px;padding:44px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.company-card::before{content:'';position:absolute;right:-60px;top:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(245,166,35,.35),transparent 70%)}
+.co-logo{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.co-logo .mark{width:68px;height:68px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#e08600);display:grid;place-items:center;font-weight:800;font-size:22px;color:#111;font-family:'Playfair Display',serif;box-shadow:0 10px 25px rgba(245,166,35,.4)}
+.co-logo h3{font-size:22px}
+.co-logo small{color:var(--muted)}
+.check-list{list-style:none;margin-top:20px}
+.check-list li{padding:8px 0;display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
+.check-list i{color:var(--accent);margin-top:6px}
+
+/* Services */
+#services{background:var(--bg2)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:36px 30px;transition:.4s;position:relative;overflow:hidden;transform-style:preserve-3d}
+.card::before{content:'';position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue));transform:scaleX(0);transform-origin:left;transition:.5s}
+.card:hover::before{transform:scaleX(1)}
+.card:hover{transform:translateY(-12px);box-shadow:var(--shadow);border-color:rgba(245,166,35,.4)}
+.card .ic{width:64px;height:64px;border-radius:18px;background:rgba(245,166,35,.12);color:var(--accent);display:grid;place-items:center;font-size:26px;margin-bottom:22px;transition:.4s}
+.card:hover .ic{background:var(--accent);color:#111;transform:rotateY(360deg)}
+.card h3{font-size:20px;margin-bottom:10px;font-family:'Poppins',sans-serif;font-weight:600}
+.card p{color:var(--muted);font-size:14.5px}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.skill{margin-bottom:26px}
+.skill-top{display:flex;justify-content:space-between;font-weight:500;font-size:14px;margin-bottom:8px}
+.bar-bg{height:10px;background:var(--line);border-radius:10px;overflow:hidden}
+.bar-fill{height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:2s cubic-bezier(.2,.7,.2,1);position:relative}
+.bar-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shine 2.4s infinite}
+@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;transition:.4s}
+.tool:hover{transform:translateY(-8px) scale(1.03);border-color:var(--accent)}
+.tool i{font-size:30px;color:var(--accent);margin-bottom:10px}
+.tool h4{font-size:15px;font-weight:600}
+.tool small{color:var(--muted)}
+
+/* Timeline */
+#experience{background:var(--bg2)}
+.timeline{position:relative;max-width:900px;margin:auto}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--blue));transform:translateX(-50%)}
+.t-item{position:relative;width:50%;padding:0 50px 50px 0}
+.t-item:nth-child(even){margin-left:50%;padding:0 0 50px 50px}
+.t-item::before{content:'';position:absolute;right:-9px;top:8px;width:18px;height:18px;background:var(--accent);border:4px solid var(--bg2);border-radius:50%;box-shadow:0 0 0 4px rgba(245,166,35,.3)}
+.t-item:nth-child(even)::before{right:auto;left:-9px}
+.t-box{background:var(--card);border:1px solid var(--line);padding:26px;border-radius:20px;transition:.4s}
+.t-box:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(245,166,35,.4)}
+.t-box .dur{display:inline-block;background:rgba(245,166,35,.14);color:var(--accent);font-size:12px;font-weight:600;padding:4px 14px;border-radius:50px;margin-bottom:10px}
+.t-box h3{font-size:19px;font-family:'Poppins',sans-serif;font-weight:600}
+.t-box h4{font-size:14px;color:var(--blue);font-weight:500;margin:2px 0 8px}
+.t-box p{color:var(--muted);font-size:14px}
+
+/* Education */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:900px;margin:auto}
+.edu{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;display:flex;gap:20px;transition:.4s}
+.edu:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.edu i{font-size:34px;color:var(--accent)}
+.edu h3{font-size:19px;font-family:'Poppins',sans-serif;font-weight:600}
+.edu p{color:var(--muted);font-size:14px}
+.edu .grade{color:#2ecc71;font-weight:600;font-size:14px;margin-top:6px}
+
+/* Projects */
+#projects{background:var(--bg2)}
+.filters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.filters button{padding:10px 24px;border-radius:50px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;font-family:inherit;font-weight:500;font-size:13px;transition:.3s}
+.filters button.active,.filters button:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.proj{position:relative;border-radius:22px;overflow:hidden;height:300px;background:var(--card);border:1px solid var(--line);transition:.5s}
+.proj.hide{display:none}
+.proj .bg{position:absolute;inset:0;display:grid;place-items:center;font-size:90px;color:rgba(255,255,255,.12);transition:.6s}
+.proj:nth-child(1) .bg{background:linear-gradient(135deg,#0f3460,#1b6ca8)}
+.proj:nth-child(2) .bg{background:linear-gradient(135deg,#7a3e00,#f5a623)}
+.proj:nth-child(3) .bg{background:linear-gradient(135deg,#1d3b2a,#3fa26b)}
+.proj:nth-child(4) .bg{background:linear-gradient(135deg,#3a1c5c,#7b52c9)}
+.proj:nth-child(5) .bg{background:linear-gradient(135deg,#5c1c1c,#d9534f)}
+.proj:nth-child(6) .bg{background:linear-gradient(135deg,#0b3c49,#17a2b8)}
+.proj:hover .bg{transform:scale(1.2) rotate(5deg)}
+.proj .ov{position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 70%);color:#fff;transition:.4s}
+.proj .ov span{color:var(--accent);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.proj .ov h3{font-size:21px;font-family:'Poppins',sans-serif;font-weight:600;margin:4px 0}
+.proj .ov p{font-size:13.5px;color:#d5dff2;max-height:0;opacity:0;overflow:hidden;transition:.5s}
+.proj:hover .ov p{max-height:90px;opacity:1}
+
+/* Gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:800px;margin:auto}
+.gal .g{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:3/4;background:linear-gradient(135deg,var(--card),var(--bg2));border:1px solid var(--line);display:grid;place-items:center;font-size:48px;color:var(--muted)}
+.gal .g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:.6s}
+.gal .g:hover img{transform:scale(1.08)}
+
+/* Contact */
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+.c-item{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);padding:20px 24px;border-radius:18px;margin-bottom:18px;transition:.4s}
+.c-item:hover{transform:translateX(10px);border-color:var(--accent)}
+.c-item i{width:52px;height:52px;border-radius:14px;background:rgba(245,166,35,.12);color:var(--accent);display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.c-item small{color:var(--muted);display:block;font-size:12px}
+.c-item span{font-weight:500;word-break:break-word}
+form{background:var(--card);border:1px solid var(--line);padding:40px;border-radius:26px;box-shadow:var(--shadow)}
+.field{position:relative;margin-bottom:22px}
+.field input,.field textarea{width:100%;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-family:inherit;font-size:14px;outline:none;transition:.3s}
+.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,166,35,.15)}
+.field textarea{min-height:130px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.map{margin-top:30px;border-radius:22px;overflow:hidden;border:1px solid var(--line);height:280px}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.3)}
+
+/* Footer */
+footer{padding:36px 8%;text-align:center;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer span{color:var(--accent)}
+
+/* Floating buttons */
+.fab{position:fixed;right:24px;z-index:1300;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-size:30px;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:.3s}
+.fab:hover{transform:scale(1.15) rotate(-8deg)}
+.fab .tip{position:absolute;right:72px;background:#111;color:#fff;font-size:12px;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:.3s;font-family:'Poppins',sans-serif}
+.fab:hover .tip{opacity:1}
+.wa{bottom:100px;background:#25d366;animation:pulseG 2s infinite}
+.fb{bottom:30px;background:#1877f2;animation:pulseB 2s infinite}
+@keyframes pulseG{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@keyframes pulseB{0%{box-shadow:0 0 0 0 rgba(24,119,242,.7)}70%{box-shadow:0 0 0 20px rgba(24,119,242,0)}100%{box-shadow:0 0 0 0 rgba(24,119,242,0)}}
+#toTop{position:fixed;left:24px;bottom:30px;width:48px;height:48px;border-radius:50%;background:var(--accent);color:#111;border:0;cursor:pointer;font-size:18px;z-index:1300;opacity:0;visibility:hidden;transition:.4s;box-shadow:var(--shadow)}
+#toTop.show{opacity:1;visibility:visible}
+#toTop:hover{transform:translateY(-6px)}
+
+/* Responsive */
+@media(max-width:992px){
+  section{padding:80px 6%}
+  .hero-grid,.about-grid,.company,.skills-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-img-wrap{order:-1}
+  .hero-text{text-align:center}
+  .hero-text p.lead{margin:auto}
+  .hero-btns,.socials{justify-content:center}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .about-imgs{height:440px;max-width:460px;margin:auto;width:100%}
+  .burger{display:block}
+  nav{position:fixed;top:0;right:-100%;width:75%;max-width:320px;height:100vh;background:var(--bg2);padding:100px 30px;transition:.5s;box-shadow:-10px 0 40px rgba(0,0,0,.4)}
+  nav.open{right:0}
+  nav ul{flex-direction:column;align-items:flex-start;gap:22px}
+  .timeline::before{left:20px}
+  .t-item,.t-item:nth-child(even){width:100%;margin-left:0;padding:0 0 40px 54px}
+  .t-item::before,.t-item:nth-child(even)::before{left:11px;right:auto}
+  .fc1{left:0}.fc2{right:0}
+}
+@media(max-width:560px){
+  .row2,.info-grid,.tools{grid-template-columns:1fr}
+  form{padding:26px}
+  .fab{width:54px;height:54px;font-size:26px;right:16px}
+  .wa{bottom:88px}.fb{bottom:22px}
+}
+@media print{#loader,.fab,#toTop,header{display:none}}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- Preloader -->
+<div id="loader">
+  <i class="fa-solid fa-trowel-bricks crane"></i>
+  <div class="load-bar"><span></span></div>
+  <p>Building Excellence...</p>
+</div>
+
+<!-- Header -->
+<header id="header">
+  <a href="#hero" class="logo">D<span>K</span>Y.</a>
+  <nav id="nav">
+    <ul>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#company">Company</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+    <button class="burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="blueprint"></div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="badge"><i class="fa-solid fa-helmet-safety"></i> Civil Engineer &bull; CEO &amp; Founder</div>
+      <h1>Hi, I'm <span>Devendra Kumar Yadav</span></h1>
+      <div class="typed">I am a <b id="typed"></b><span class="cursor"></span></div>
+      <p class="lead">CEO &amp; Owner of <strong>JMC Construction and Engineering Pvt. Ltd.</strong> — delivering quality construction, telecom infrastructure and structural works across Nepal with honesty, discipline and precision.</p>
+      <div class="hero-btns">
+        <a href="Devendra_Kumar_Yadav_CV_v4.pdf" download="Devendra_Kumar_Yadav_CV.pdf" class="btn btn-primary"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Hire / Contact Me</a>
+      </div>
+      <div class="socials">
+        <a href="https://wa.me/9779813019707" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/devendra.yadav.960849/" target="_blank" rel="noopener" aria-label="Facebook" id="fbLink1"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:dy48495@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+9779813019707" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="ring"></div>
+      <div class="float-card fc1"><i class="fa-solid fa-building"></i><div><strong>JMC</strong>Construction &amp; Eng.</div></div>
+      <div class="hero-frame">
+        <!-- Put your suit photo next to index.html and name it: photo-suit.jpg -->
+        <img src="photo-suit.jpg" alt="Devendra Kumar Yadav" onerror="this.style.display='none'">
+      </div>
+      <div class="float-card fc2"><i class="fa-solid fa-award"></i><div><strong>First Class</strong>with Distinction</div></div>
+    </div>
+  </div>
+  <div class="scroll-down"></div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="sec-title reveal"><small>Who I Am</small><h2>About Me</h2><div class="bar"></div></div>
+    <div class="about-grid">
+      <div class="about-imgs reveal left">
+        <div class="ph" style="left:0;top:0;width:68%;height:80%"><i class="fa-solid fa-user-tie"></i></div>
+        <div class="ph" style="right:0;bottom:0;width:58%;height:62%"><i class="fa-solid fa-helmet-safety"></i></div>
+        <!-- Photos: photo-jacket.jpg and photo-suit.jpg -->
+        <img class="a1" src="photo-jacket.jpeg" alt="Devendra at site" onerror="this.style.display='none'">
+        <img class="a2" src="photo-suit.jpg" alt="Devendra Kumar Yadav" onerror="this.style.display='none'">
+        <div class="exp-badge"><b>6+</b><span>Years Experience</span></div>
+      </div>
+      <div class="about-text reveal right">
+        <h3>Building Nepal's Infrastructure with Honesty &amp; Precision</h3>
+        <p>I am a Diploma holder in Civil Engineering (First Class with Distinction) and the CEO &amp; Owner of <strong>JMC Construction and Engineering Pvt. Ltd.</strong> With hands-on experience in telecom tower installation, residential construction and Nepal Electricity Authority sub-station building works, I bring field-tested expertise and strong leadership to every project.</p>
+        <p>My work philosophy is simple: strive for excellence through honesty, discipline, hard work, truthfulness, determination and dedication — while continuously upgrading my engineering capabilities.</p>
+        <div class="info-grid">
+          <div><b>Name:</b> Devendra Kumar Yadav</div>
+          <div><b>Role:</b> CEO &amp; Civil Engineer</div>
+          <div><b>Email:</b> dy48495@gmail.com</div>
+          <div><b>Phone:</b> +977-9813019707</div>
+          <div><b>Location:</b> Aurahi-04, Siraha, Nepal</div>
+          <div><b>Languages:</b> English, Hindi, Nepali</div>
+        </div>
+        <a href="Devendra_Kumar_Yadav_CV_v4.pdf" download="Devendra_Kumar_Yadav_CV.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download My CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="stat-grid">
+    <div class="stat reveal"><i class="fa-solid fa-calendar-check"></i><h3><span class="count" data-to="6">0</span>+</h3><p>Years of Experience</p></div>
+    <div class="stat reveal"><i class="fa-solid fa-tower-cell"></i><h3><span class="count" data-to="4">0</span></h3><p>Project Sectors Handled</p></div>
+    <div class="stat reveal"><i class="fa-solid fa-ruler-combined"></i><h3><span class="count" data-to="4">0</span></h3><p>Surveying Instruments Mastered</p></div>
+    <div class="stat reveal"><i class="fa-solid fa-handshake"></i><h3><span class="count" data-to="100">0</span>%</h3><p>Commitment to Quality</p></div>
+  </div>
+</div>
+
+<!-- Company -->
+<section id="company">
+  <div class="container company">
+    <div class="company-card reveal left">
+      <div class="co-logo">
+        <div class="mark">JMC</div>
+        <div><h3>JMC Construction &amp; Engineering Pvt. Ltd.</h3><small>Founder, CEO &amp; Owner: Devendra Kumar Yadav</small></div>
+      </div>
+      <p style="color:var(--muted)">A Nepal-based construction and engineering company committed to delivering safe, durable and cost-effective infrastructure with transparent working practices and on-time delivery.</p>
+      <ul class="check-list">
+        <li><i class="fa-solid fa-circle-check"></i> Civil &amp; structural construction</li>
+        <li><i class="fa-solid fa-circle-check"></i> Telecom tower &amp; infrastructure works</li>
+        <li><i class="fa-solid fa-circle-check"></i> Residential &amp; commercial buildings</li>
+        <li><i class="fa-solid fa-circle-check"></i> Land survey, design &amp; site supervision</li>
+      </ul>
+    </div>
+    <div class="reveal right">
+      <div class="sec-title" style="text-align:left;margin-bottom:24px"><small>My Company</small><h2>Leading JMC with Vision</h2><div class="bar" style="margin:0"></div></div>
+      <p style="color:var(--muted);margin-bottom:18px">As CEO, I lead JMC with a strong focus on engineering quality, safety on site, and long-term client relationships. Every project is planned carefully, executed with skilled teams, and monitored until handover.</p>
+      <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Get a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <div class="sec-title reveal"><small>What I Offer</small><h2>Engineering Services</h2><div class="bar"></div></div>
+    <div class="cards">
+      <div class="card reveal zoom"><div class="ic"><i class="fa-solid fa-building"></i></div><h3>Building Construction</h3><p>Complete residential and commercial construction with quality materials, masonry and structural execution.</p></div>
+      <div class="card reveal zoom"><div class="ic"><i class="fa-solid fa-tower-broadcast"></i></div><h3>Telecom Infrastructure</h3><p>Tower installation, boom survey, fencing, solar installation, data entry and reporting for telecom vendors.</p></div>
+      <div class="card reveal zoom"><div class="ic"><i class="fa-solid fa-bolt"></i></div><h3>Sub-Station Works</h3><p>Civil structural and building works for electricity sub-stations, aligned with NEA standards.</p></div>
+      <div class="card reveal zoom"><div class="ic"><i class="fa-solid fa-compass-drafting"></i></div><h3>Design &amp; Planning</h3><p>AutoCAD-based drawings, layouts, estimates and planning for efficient project execution.</p></div>
+      <div class="card reveal zoom"><div class="ic"><i class="fa-solid fa-ruler-combined"></i></div><h3>Land &amp; Site Survey</h3><p>Accurate surveying with Total Station, Theodolite, Auto Level and Dumpy Level.</p></div>
+      <div class="card reveal zoom"><div class="ic"><i class="fa-solid fa-hard-hat"></i></div><h3>Site Supervision</h3><p>On-ground quality control, safety management, labour coordination and progress reporting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-title reveal"><small>My Expertise</small><h2>Technical Skills</h2><div class="bar"></div></div>
+    <div class="skills-grid">
+      <div class="reveal left">
+        <div class="skill"><div class="skill-top"><span>Site Supervision &amp; Execution</span><span>95%</span></div><div class="bar-bg"><div class="bar-fill" data-w="95"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Surveying (Total Station, Theodolite, Levels)</span><span>92%</span></div><div class="bar-bg"><div class="bar-fill" data-w="92"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Civil &amp; Structural Masonry Work</span><span>90%</span></div><div class="bar-bg"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Telecom Tower Installation</span><span>90%</span></div><div class="bar-bg"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>AutoCAD Designing &amp; Planning</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" data-w="85"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Leadership &amp; Team Management</span><span>93%</span></div><div class="bar-bg"><div class="bar-fill" data-w="93"></div></div></div>
+      </div>
+      <div class="tools reveal right">
+        <div class="tool"><i class="fa-solid fa-satellite-dish"></i><h4>Total Station</h4><small>Precision Survey</small></div>
+        <div class="tool"><i class="fa-solid fa-bullseye"></i><h4>Theodolite</h4><small>Angle Measurement</small></div>
+        <div class="tool"><i class="fa-solid fa-ruler-horizontal"></i><h4>Auto Level</h4><small>Levelling</small></div>
+        <div class="tool"><i class="fa-solid fa-drafting-compass"></i><h4>AutoCAD</h4><small>Design &amp; Drawing</small></div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:50px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;text-align:center">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:18px;margin-bottom:8px"><i class="fa-solid fa-map-location-dot" style="color:var(--accent)"></i> Survey Camp Project – Melkote</h3>
+      <p style="color:var(--muted);font-size:14px">Practical benchmarks: Bund • Highway Alignment • Canal • Block Levelling of OHT • Waste Weir • Oxidation Point • Town Planning</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-title reveal"><small>My Journey</small><h2>Work Experience &amp; Education</h2><div class="bar"></div></div>
+    <div class="timeline">
+      <div class="t-item reveal"><div class="t-box"><span class="dur">Founder</span><h3>CEO &amp; Owner</h3><h4>JMC Construction and Engineering Pvt. Ltd.</h4><p>Leading company operations, project planning, client relations and quality delivery.</p></div></div>
+      <div class="t-item reveal"><div class="t-box"><span class="dur">2.5 Years</span><h3>Site Supervisor</h3><h4>Skipper Paradise Solution JV, Nepal</h4><p>Nepal Telecom tower installation — supervision and site execution.</p></div></div>
+      <div class="t-item reveal"><div class="t-box"><span class="dur">1.5 Years</span><h3>Telecom Infrastructure Project</h3><h4>Gami Telecom Solutions &amp; Infrastructure Pvt. Ltd. (NTC Vendor)</h4><p>Boom survey, fencing, solar &amp; tower installation, data entry and reporting.</p></div></div>
+      <div class="t-item reveal"><div class="t-box"><span class="dur">9 Months</span><h3>Residential Building Project</h3><h4>Private Vendor Project, Nepal</h4><p>Civil construction and site execution.</p></div></div>
+      <div class="t-item reveal"><div class="t-box"><span class="dur">2 Years</span><h3>Building Work of Sub-Station</h3><h4>Nepal Electricity Authority (NEA)</h4><p>Civil structural masonry and site work.</p></div></div>
+    </div>
+
+    <div class="sec-title reveal" style="margin:70px 0 40px"><small>Academics</small><h2>Education</h2><div class="bar"></div></div>
+    <div class="edu-grid">
+      <div class="edu reveal zoom"><i class="fa-solid fa-graduation-cap"></i><div><h3>Diploma in Civil Engineering</h3><p>East West Polytechnic, Bangalore<br>Dept. of Technical Education, India</p><div class="grade">2019 A.D. — First Class with Distinction</div></div></div>
+      <div class="edu reveal zoom"><i class="fa-solid fa-school"></i><div><h3>S.L.C.</h3><p>J.M. Academy, Siraha, Nepal<br>Nepal Board</p><div class="grade">2016 A.D. — First Division</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-title reveal"><small>My Work</small><h2>Project Portfolio</h2><div class="bar"></div></div>
+    <div class="filters reveal">
+      <button class="active" data-f="all">All</button>
+      <button data-f="telecom">Telecom</button>
+      <button data-f="building">Buildings</button>
+      <button data-f="power">Power</button>
+      <button data-f="survey">Survey</button>
+    </div>
+    <div class="proj-grid">
+      <div class="proj reveal zoom" data-c="telecom"><div class="bg"><i class="fa-solid fa-tower-cell"></i></div><div class="ov"><span>Telecom</span><h3>Nepal Telecom Tower Installation</h3><p>Site supervision for tower installation over 2.5 years with Skipper Paradise Solution JV.</p></div></div>
+      <div class="proj reveal zoom" data-c="telecom"><div class="bg"><i class="fa-solid fa-solar-panel"></i></div><div class="ov"><span>Telecom</span><h3>Tower, Solar &amp; Fencing Works</h3><p>Boom survey, fencing, solar and tower installation for an NTC vendor.</p></div></div>
+      <div class="proj reveal zoom" data-c="building"><div class="bg"><i class="fa-solid fa-house-chimney"></i></div><div class="ov"><span>Buildings</span><h3>Residential Building Project</h3><p>Complete civil construction and site execution of a private residential project.</p></div></div>
+      <div class="proj reveal zoom" data-c="power"><div class="bg"><i class="fa-solid fa-plug-circle-bolt"></i></div><div class="ov"><span>Power</span><h3>NEA Sub-Station Building</h3><p>Civil structural masonry and site work for Nepal Electricity Authority.</p></div></div>
+      <div class="proj reveal zoom" data-c="survey"><div class="bg"><i class="fa-solid fa-road"></i></div><div class="ov"><span>Survey</span><h3>Highway Alignment &amp; Canal Survey</h3><p>Practical survey camp at Melkote covering highway, canal and bund alignment.</p></div></div>
+      <div class="proj reveal zoom" data-c="survey"><div class="bg"><i class="fa-solid fa-city"></i></div><div class="ov"><span>Survey</span><h3>Town Planning &amp; OHT Levelling</h3><p>Block levelling of OHT, waste weir, oxidation point and town planning benchmarks.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+  <div class="container">
+    <div class="sec-title reveal"><small>Moments</small><h2>Gallery</h2><div class="bar"></div></div>
+    <div class="gal">
+      <div class="g reveal zoom"><i class="fa-regular fa-image"></i><img src="photo-jacket.jpeg" alt="Devendra Kumar Yadav" onerror="this.style.display='none'"></div>
+      <div class="g reveal zoom"><i class="fa-regular fa-image"></i><img src="photo-suit.jpg" alt="Devendra Kumar Yadav in suit" onerror="this.style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-title reveal"><small>Get In Touch</small><h2>Let's Build Something Great</h2><div class="bar"></div></div>
+    <div class="contact-grid">
+      <div class="reveal left">
+        <div class="c-item"><i class="fa-solid fa-location-dot"></i><div><small>Address</small><span>Aurahi-04, Siraha, Nepal</span></div></div>
+        <div class="c-item"><i class="fa-solid fa-phone"></i><div><small>Phone</small><a href="tel:+9779813019707"><span>+977-9813019707</span></a></div></div>
+        <div class="c-item"><i class="fa-solid fa-envelope"></i><div><small>Email</small><a href="mailto:dy48495@gmail.com"><span>dy48495@gmail.com</span></a></div></div>
+        <div class="c-item"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp</small><a href="https://wa.me/9779813019707" target="_blank" rel="noopener"><span>Chat on WhatsApp</span></a></div></div>
+        <div class="map"><iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Siraha,Nepal&output=embed"></iframe></div>
+      </div>
+      <form class="reveal right" id="contactForm">
+        <h3 style="font-family:'Poppins',sans-serif;margin-bottom:24px">Send a Message</h3>
+        <div class="row2">
+          <div class="field"><input type="text" id="fname" placeholder="Your Name" required></div>
+          <div class="field"><input type="tel" id="fphone" placeholder="Phone Number"></div>
+        </div>
+        <div class="field"><input type="email" id="femail" placeholder="Your Email" required></div>
+        <div class="field"><input type="text" id="fsub" placeholder="Subject / Project Type"></div>
+        <div class="field"><textarea id="fmsg" placeholder="Tell me about your project..." required></textarea></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send via Email</button>
+          <button type="button" class="btn btn-outline" id="sendWA"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> <span>Devendra Kumar Yadav</span> &bull; CEO, JMC Construction and Engineering Pvt. Ltd. &bull; All rights reserved.</p>
+</footer>
+
+<!-- Floating buttons -->
+<a class="fab wa" href="https://wa.me/9779813019707?text=Hello%20Devendra%2C%20I%20visited%20your%20portfolio." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="tip">Chat on WhatsApp</span></a>
+<a class="fab fb" id="fbFloat" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="tip">Follow on Facebook</span></a>
+<button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ===== SETTINGS: change these ===== */
+const FACEBOOK_URL = "https://www.facebook.com/"; // put your real Facebook profile/page link here
+const WHATSAPP_NUMBER = "9779813019707";
+const EMAIL = "dy48495@gmail.com";
+/* ================================== */
+document.getElementById('fbFloat').href = FACEBOOK_URL;
+document.getElementById('fbLink1').href = FACEBOOK_URL;
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Loader
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),1500));
+
+// Header, progress, back-to-top, active link
+const header=document.getElementById('header'),prog=document.getElementById('progress'),toTop=document.getElementById('toTop');
+const links=[...document.querySelectorAll('nav a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  prog.style.width=(y/h*100)+'%';
+  header.classList.toggle('scrolled',y>60);
+  toTop.classList.toggle('show',y>500);
+  let cur=0;secs.forEach((s,i)=>{if(s&&s.offsetTop-160<=y)cur=i});
+  links.forEach((l,i)=>l.classList.toggle('active',i===cur));
+});
+toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+// Mobile nav
+const nav=document.getElementById('nav'),burger=document.getElementById('burger');
+burger.onclick=()=>{nav.classList.toggle('open');burger.innerHTML=nav.classList.contains('open')?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>'};
+links.forEach(l=>l.addEventListener('click',()=>{nav.classList.remove('open');burger.innerHTML='<i class="fa-solid fa-bars"></i>'}));
+
+// Theme
+const tb=document.getElementById('themeBtn');
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');tb.innerHTML='<i class="fa-solid fa-sun"></i>'}
+tb.onclick=()=>{const l=document.body.classList.toggle('light');tb.innerHTML=l?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';try{localStorage.setItem('theme',l?'light':'dark')}catch(e){}};
+
+// Typing
+const words=["Civil Engineer","CEO of JMC Construction","Site Supervisor","Telecom Infrastructure Expert","Land Surveyor"];
+let wi=0,ci=0,del=false;const te=document.getElementById('typed');
+(function type(){
+  const w=words[wi];
+  te.textContent=w.substring(0,ci);
+  if(!del&&ci<w.length){ci++;setTimeout(type,90)}
+  else if(!del){del=true;setTimeout(type,1400)}
+  else if(ci>0){ci--;setTimeout(type,45)}
+  else{del=false;wi=(wi+1)%words.length;setTimeout(type,300)}
+})();
+
+// Reveal, bars, counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('show');
+  e.target.querySelectorAll?.('.bar-fill').forEach(b=>b.style.width=b.dataset.w+'%');
+  if(e.target.classList.contains('stat'))countUp(e.target.querySelector('.count'));
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+function countUp(el){const to=+el.dataset.to;let n=0;const step=Math.max(1,Math.ceil(to/60));const t=setInterval(()=>{n+=step;if(n>=to){n=to;clearInterval(t)}el.textContent=n},30)}
+
+// Project filter
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.querySelectorAll('.proj').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f));
+});
+
+// Card 3D tilt
+document.querySelectorAll('.card,.tool').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateX(${-y*10}deg) rotateY(${x*10}deg) translateY(-8px)`});
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+
+// Contact form
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const b=`Name: ${fname.value}\nPhone: ${fphone.value}\nEmail: ${femail.value}\n\n${fmsg.value}`;
+  location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(fsub.value||'Portfolio Inquiry')}&body=${encodeURIComponent(b)}`;
+});
+document.getElementById('sendWA').onclick=()=>{
+  const t=`Hello Devendra, I'm ${fname.value||'a visitor'}.\n${fsub.value?('Subject: '+fsub.value+'\n'):''}${fmsg.value}`;
+  open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t)}`,'_blank');
+};
+
+// Hero particle background (construction nodes)
+const cv=document.getElementById('bg-canvas'),cx=cv.getContext('2d');let P=[];
+function size(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;P=Array.from({length:Math.min(70,Math.floor(cv.width/18))},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5}))}
+size();addEventListener('resize',size);
+(function draw(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  P.forEach((p,i)=>{
+    p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1;
+    cx.beginPath();cx.arc(p.x,p.y,2,0,7);cx.fillStyle='rgba(245,166,35,.7)';cx.fill();
+    for(let j=i+1;j<P.length;j++){const q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.strokeStyle=`rgba(47,128,237,${.35*(1-d/130)})`;cx.stroke()}}
+  });
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
